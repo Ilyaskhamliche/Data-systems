@@ -55,3 +55,30 @@ CREATE TABLE Game (
     FOREIGN KEY (Home_Team_ID) REFERENCES Team(Team_ID),
     FOREIGN KEY (Away_Team_ID) REFERENCES Team(Team_ID)
 );
+
+-- Insert into Conference table
+INSERT INTO Conference (Name) VALUES ('Eastern');
+INSERT INTO Conference (Name) VALUES ('Western');
+
+-- Insert into Division table
+INSERT INTO Division (Name, Conference_ID) VALUES ('Atlantic', 1);
+INSERT INTO Division (Name, Conference_ID) VALUES ('Central', 1);
+INSERT INTO Division (Name, Conference_ID) VALUES ('Southeast', 1);
+INSERT INTO Division (Name, Conference_ID) VALUES ('Northwest', 2);
+INSERT INTO Division (Name, Conference_ID) VALUES ('Pacific', 2);
+INSERT INTO Division (Name, Conference_ID) VALUES ('Southwest', 2);
+
+-- Insert into Team table
+INSERT INTO Team (Name, Mascot, City, State, Arena, Division_ID, Coach_ID) VALUES ('Boston Celtics', 'Leprechaun', 'Boston', 'MA', 'TD Garden', 1, 1);
+INSERT INTO Team (Name, Mascot, City, State, Arena, Division_ID, Coach_ID) VALUES ('Los Angeles Lakers', 'Laker', 'Los Angeles', 'CA', 'Staples Center', 5, 2);
+
+-- Insert sample data into Coach table
+INSERT INTO Coach (Name, Team_ID) VALUES ('Brad Stevens', 1);
+INSERT INTO Coach (Name, Team_ID) VALUES ('Frank Vogel', 2);
+
+-- Insert into Player table
+INSERT INTO Player (First_Name, Last_Name, Number, Team_ID) VALUES ('Jayson', 'Tatum', 0, 1);
+INSERT INTO Player (First_Name, Last_Name, Number, Team_ID) VALUES ('LeBron', 'James', 23, 2);
+
+-- Insert into Game table
+INSERT INTO Game (Date_Time, Home_Team_ID, Away_Team_ID, Home_Team_Score, Away_Team_Score) VALUES ('2024-02-28 20:00:00', 1, 2, 112, 105);
